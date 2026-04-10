@@ -3,3 +3,7 @@
   tasks:
     - name: Ping the remote hosts
       ansible.builtin.ping:
+      register: result
+    - name: debug
+      ansible.builtin.debug:
+        msg: result
