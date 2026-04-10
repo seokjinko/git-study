@@ -1,9 +1,11 @@
+---
 - name: Test connectivity to all hosts
   hosts: all
   tasks:
     - name: Ping the remote hosts
       ansible.builtin.ping:
       register: result
-    - name: debug
+
+    - name: Display ping result
       ansible.builtin.debug:
-        var: {{ result }}
+        var: result  # {{ }} 없이 변수명만 적는 것이 정석입니다.
